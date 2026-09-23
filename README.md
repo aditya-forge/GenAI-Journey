@@ -15,7 +15,10 @@ Personal study notes from a Deep Learning / Generative AI / Machine Learning cou
 │   ├── 02-convolutional-neural-networks.md      # CNN architecture deep-dive + MNIST lab walkthrough
 │   ├── 03-generative-ai-and-machine-learning.md # GenAI, discriminative vs generative, 4 learning types, ML tasks
 │   ├── 04-probability-fundamentals-and-llm-settings.md # Probability, likelihood, prior/posterior, temperature/top-p
-│   └── 05-ml-practical-and-eda.md               # ML lifecycle, Python libraries, 8-step EDA framework
+│   ├── 05-ml-practical-and-eda.md               # ML lifecycle, Python libraries, 8-step EDA framework
+│   ├── 06-lstm-and-sequence-models.md            # LSTM architecture, sequence memory, limitations
+│   ├── 07-transformers-and-autoregressive-models.md # Transformers, attention, autoregressive generation
+│   └── 08-transformer-types-and-image-generation.md # Encoder/Decoder types, Pixel RNN, Pixel CNN
 ├── notebooks/
 │   └── mnist-cnn-classification.ipynb           # Hands-on CNN digit classifier (TensorFlow/Keras)
 ├── handwritten-notes/                           # (add your scanned/handwritten notes here)
@@ -31,6 +34,9 @@ Personal study notes from a Deep Learning / Generative AI / Machine Learning cou
 | [Generative AI & ML](notes/03-generative-ai-and-machine-learning.md) | Generative vs Discriminative models · Supervised/Unsupervised/Reinforcement/Self-Supervised Learning · Regression/Classification/Clustering |
 | [Probability & LLM Settings](notes/04-probability-fundamentals-and-llm-settings.md) | Probability vs Likelihood · Prior vs Posterior (Bayesian intuition) · Temperature · Top-P · Knowledge cutoff |
 | [ML Practical & EDA](notes/05-ml-practical-and-eda.md) | Standard ML lifecycle · pandas/NumPy/Matplotlib/Seaborn/Pickle · 8-step EDA framework |
+| [LSTM & Sequence Models](notes/06-lstm-and-sequence-models.md) | LSTM architecture · Sequence memory · RNN limitations · Why we need Transformers |
+| [Transformers & Autoregressive Models](notes/07-transformers-and-autoregressive-models.md) | Attention mechanism · Autoregressive modeling · Next-token prediction · Word generation |
+| [Transformer Types & Image Generation](notes/08-transformer-types-and-image-generation.md) | Encoder/Decoder variants · Pixel RNN · Pixel CNN · Masked convolutions · Evolution summary |
 
 ## 🚀 Hands-on Lab
 
@@ -44,6 +50,9 @@ If you're new to the topic, read in this order:
 3. **Convolutional Neural Networks** → the image-specific architecture
 4. **Probability Fundamentals** → the math intuition behind "confidence" and generation settings
 5. **ML Practical & EDA** → how this actually gets built in code
+6. **LSTM & Sequence Models** → understanding recurrent memory and its limits
+7. **Transformers & Autoregressive Models** → attention, next-token prediction
+8. **Transformer Types & Image Generation** → encoder/decoder variants, pixel-level generation
 
 ## 🙌 Credits
 
