@@ -1,31 +1,49 @@
-# 🧠 Deep Learning & Generative AI — Study Notes
+# Deep Learning & Generative AI — Study Notes
 
-Personal study notes from a Deep Learning / Generative AI / Machine Learning course, expanded with my own deeper research, diagrams, and a hands-on CNN lab. Kept here so I can revise quickly and share with others.
+Personal study notes from a Deep Learning / Generative AI / Machine Learning course, expanded with my own deeper research, diagrams, and hands-on labs. Kept here so I can revise quickly and share with others.
 
-> 📓 These notes started from course handbooks and were extended with extra explanations, tables, and analogies while studying — including handwritten notes (scanned into [`handwritten-notes/`](./handwritten-notes)).
+> These notes started from course handbooks (SmartBridge / SkillWallet) and were extended with extra explanations, tables, and analogies while studying — including handwritten notes (scanned into [`handwritten-notes/`](./handwritten-notes)).
 
 ---
 
-## 📂 Structure
+## Learning path at a glance
+
+```mermaid
+graph LR
+    A[Neural nets] --> B[CNN]
+    B --> C[Probability]
+    C --> D[RNN/LSTM]
+    D --> E[Transformers]
+    E --> F[Autoregressive generation]
+    F --> G[Autoencoders/VAE]
+```
+
+---
+
+## Structure
 
 ```
 .
 ├── notes/
-│   ├── 01-deep-learning-fundamentals.md         # Perceptron, neurons, weights, bias, backprop, ANN/CNN/RNN
-│   ├── 02-convolutional-neural-networks.md      # CNN architecture deep-dive + MNIST lab walkthrough
-│   ├── 03-generative-ai-and-machine-learning.md # GenAI, discriminative vs generative, 4 learning types, ML tasks
-│   ├── 04-probability-fundamentals-and-llm-settings.md # Probability, likelihood, prior/posterior, temperature/top-p
-│   ├── 05-ml-practical-and-eda.md               # ML lifecycle, Python libraries, 8-step EDA framework
-│   ├── 06-lstm-and-sequence-models.md            # LSTM architecture, sequence memory, limitations
-│   ├── 07-transformers-and-autoregressive-models.md # Transformers, attention, autoregressive generation
-│   └── 08-transformer-types-and-image-generation.md # Encoder/Decoder types, Pixel RNN, Pixel CNN
+│   ├── 00-glossary.md                                    # Alphabetical glossary of all key terms
+│   ├── 01-deep-learning-fundamentals.md                  # Perceptron, neurons, weights, bias, backprop, ANN/CNN/RNN
+│   ├── 02-convolutional-neural-networks.md               # CNN architecture deep-dive + MNIST lab walkthrough
+│   ├── 03-generative-ai-and-machine-learning.md          # GenAI, discriminative vs generative, 4 learning types, ML tasks
+│   ├── 04-probability-fundamentals-and-llm-settings.md   # Probability, likelihood, prior/posterior, temperature/top-p
+│   ├── 05-ml-practical-and-eda.md                        # ML lifecycle, Python libraries, 8-step EDA framework
+│   ├── 06-lstm-and-sequence-models.md                    # LSTM architecture, sequence memory, limitations
+│   ├── 07-transformers-and-autoregressive-models.md      # Transformers, attention, autoregressive generation
+│   ├── 08-transformer-types-and-image-generation.md      # Encoder/Decoder types, Pixel RNN, Pixel CNN
+│   ├── 09-autoencoders-and-vaes.md                       # Autoencoders, VAE, reparameterization, ELBO, KL divergence
+│   └── 10-TODO-probability-to-generative-ai-high-dimensional.md  # Stub — handbook not yet available
 ├── notebooks/
-│   └── mnist-cnn-classification.ipynb           # Hands-on CNN digit classifier (TensorFlow/Keras)
-├── handwritten-notes/                           # (add your scanned/handwritten notes here)
+│   ├── mnist-cnn-classification.ipynb                    # Hands-on CNN digit classifier (TensorFlow/Keras)
+│   └── vae-mnist.ipynb                                   # Hands-on AE vs VAE lab — latent plots + digit generation (PyTorch)
+├── handwritten-notes/                                    # Scanned/handwritten notes — see README inside
 └── README.md
 ```
 
-## 📖 Topics Covered
+## Topics Covered
 
 | Notes file | Key concepts |
 |---|---|
@@ -37,14 +55,18 @@ Personal study notes from a Deep Learning / Generative AI / Machine Learning cou
 | [LSTM & Sequence Models](notes/06-lstm-and-sequence-models.md) | LSTM architecture · Sequence memory · RNN limitations · Why we need Transformers |
 | [Transformers & Autoregressive Models](notes/07-transformers-and-autoregressive-models.md) | Attention mechanism · Autoregressive modeling · Next-token prediction · Word generation |
 | [Transformer Types & Image Generation](notes/08-transformer-types-and-image-generation.md) | Encoder/Decoder variants · Pixel RNN · Pixel CNN · Masked convolutions · Evolution summary |
+| [Autoencoders & VAEs](notes/09-autoencoders-and-vaes.md) | Encoder/Decoder/Latent space · μ and σ · Gaussian latent · Reparameterization trick · Reconstruction loss · KL divergence · ELBO |
 
-## 🚀 Hands-on Lab
+## Hands-on Labs
 
-[`notebooks/mnist-cnn-classification.ipynb`](notebooks/mnist-cnn-classification.ipynb) — a small CNN (Conv→Pool→Conv→Pool→Dense→Softmax) trained on MNIST, with visualizations of the raw data, training curves, a confusion matrix, and a fun step where you can upload your own handwritten digit for live prediction.
+1. [`notebooks/mnist-cnn-classification.ipynb`](notebooks/mnist-cnn-classification.ipynb) — a small CNN (Conv→Pool→Conv→Pool→Dense→Softmax) trained on MNIST, with visualizations of the raw data, training curves, a confusion matrix, and a fun step where you can upload your own handwritten digit for live prediction.
 
-## 🗺️ How to read this repo
+2. [`notebooks/vae-mnist.ipynb`](notebooks/vae-mnist.ipynb) — a side-by-side lab comparing a plain Autoencoder to a Variational Autoencoder on MNIST. Shows latent-space scatter plots (AE vs VAE), reconstruction quality, new digit generation by sampling from the latent space, and a 15×15 latent grid walk. Built with PyTorch.
+
+## How to read this repo
 
 If you're new to the topic, read in this order:
+
 1. **Deep Learning Fundamentals** → the building blocks (neuron, weights, training loop)
 2. **Generative AI & ML** → the bigger picture (learning paradigms, ML task types)
 3. **Convolutional Neural Networks** → the image-specific architecture
@@ -53,11 +75,12 @@ If you're new to the topic, read in this order:
 6. **LSTM & Sequence Models** → understanding recurrent memory and its limits
 7. **Transformers & Autoregressive Models** → attention, next-token prediction
 8. **Transformer Types & Image Generation** → encoder/decoder variants, pixel-level generation
+9. **Autoencoders & VAEs** → compressing data and generating from a latent space
 
-## 🙌 Credits
+## Credits
 
 Course material basis: SmartBridge / SkillWallet handbooks. Notes, diagrams-in-text, and explanations reorganized/expanded by me while studying.
 
-## 📄 License
+## License
 
 Feel free to use these notes for your own learning. Attribution appreciated but not required.
