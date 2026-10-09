@@ -3,10 +3,15 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Model artifacts
+# Model artifacts — do not commit trained weights or checkpoints
 *.keras
 *.h5
 *.pkl
+*.pt
+*.pth
+
+# MNIST and other datasets downloaded at runtime — do not commit
+data/
 
 # OS
 .DS_Store
